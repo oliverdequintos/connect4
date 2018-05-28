@@ -44,17 +44,16 @@ $(document).ready(function() {
           }else{
             if (playerTurnColor == 'red') {
               playerRed.push([xIndex, yIndex]);
+              gameChecker(playerRed);
               playerTurnColor = "yellow";
               $(this).css("background-color", playerTurnColor);
             }else{
               playerYellow.push([xIndex, yIndex]);
+              gameChecker(playerYellow);
               playerTurnColor = 'red';
               $(this).css("background-color", playerTurnColor);
             }
           }
-
-            console.log("playerRed: "+ playerRed)
-            console.log("playerYellow: "+playerYellow)
         })
     }
 });
