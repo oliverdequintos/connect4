@@ -41,9 +41,11 @@ $(document).ready(function() {
           if (playerTurnColor == 'red') {
             playerRed.push([xIndex, yIndex]);
             playerTurnColor = "yellow";
+            $(this).css("background-color", playerTurnColor);
           }else{
             playerYellow.push([xIndex, yIndex]);
             playerTurnColor = 'red';
+            $(this).css("background-color", playerTurnColor);
           }
 
             console.log("playerRed: "+ playerRed)
