@@ -1,0 +1,21 @@
+<div id="result"></div>
+
+<input type="hidden" id="player-turn" value="red">
+<table id="pointer-board">
+  <tr>
+    <% 7.times do |i| %>
+      <td id="pointer-<%=i%>" class="pointer-transparent"></td>
+    <% end %>
+  </tr>
+</table>
+<table id="board">
+  <% 6.times do %>
+    <tr>
+      <% 7.times do %>
+        <td class="empty"></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<button id="submit"></button>

@@ -1,0 +1,52 @@
+// Place all the styles related to the boards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.heading {
+  text-align: center;
+}
+
+#pointer-board {
+  margin: 0px auto;
+}
+
+#board {
+  background: #6495ed;
+  margin: 0px auto;
+}
+
+.empty {
+  background-color: lightgrey;
+  border-radius: 50%;
+  display: inline-block;
+  height: 70px;
+  margin: 5px;
+  width: 70px;
+}
+
+.red {
+  background-color: #ee4040;
+  border-radius: 50%;
+  display: inline-block;
+  height: 70px;
+  margin: 5px;
+  width: 70px;
+}
+
+.yellow {
+  background-color: #fcff21;
+  border-radius: 50%;
+  display: inline-block;
+  height: 70px;
+  margin: 5px;
+  width: 70px;
+}
+
+.pointer-transparent {
+  background-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  height: 70px;
+  margin: 5px;
+  width: 70px;
+}
