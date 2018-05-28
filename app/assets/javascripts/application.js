@@ -16,3 +16,15 @@
 //= require turbolinks
 //= require board-components
 //= require_tree .
+
+var playerYellow = [];
+var playerRed = [];
+var takenIndexes = [];
+var pointer0 = 5;
+var pointer1 = 5;
+var pointer2 = 5;
+var pointer3 = 5;
+var pointer4 = 5;
+var pointer5 = 5
+var pointer6 = 5;
+var playerTurnColor = 'red';
