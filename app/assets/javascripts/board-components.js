@@ -38,6 +38,7 @@ $(document).ready(function() {
                 yIndex = 5;
           }
 
+          $('#x-'+xIndex+'-y-'+yIndex).css("background-color", playerTurnColor);
           if (playerTurnColor == 'red') {
             playerRed.push([xIndex, yIndex]);
             playerTurnColor = "yellow";

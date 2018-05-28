@@ -6,10 +6,10 @@
   </tr>
 </table>
 <table id="board">
-  <% 6.times do %>
+  <% 6.times do |y| %>
     <tr>
-      <% 7.times do %>
-        <td class="empty"></td>
+      <% 7.times do |x| %>
+        <td id="x-<%=x%>-y-<%=y%>" class="empty"></td>
       <% end %>
     </tr>
   <% end %>
