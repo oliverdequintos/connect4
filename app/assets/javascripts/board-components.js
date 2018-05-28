@@ -39,14 +39,18 @@ $(document).ready(function() {
           }
 
           $('#x-'+xIndex+'-y-'+yIndex).css("background-color", playerTurnColor);
-          if (playerTurnColor == 'red') {
-            playerRed.push([xIndex, yIndex]);
-            playerTurnColor = "yellow";
-            $(this).css("background-color", playerTurnColor);
+          if (yIndex < 0) {
+            alert('This column is full, choose other column.')
           }else{
-            playerYellow.push([xIndex, yIndex]);
-            playerTurnColor = 'red';
-            $(this).css("background-color", playerTurnColor);
+            if (playerTurnColor == 'red') {
+              playerRed.push([xIndex, yIndex]);
+              playerTurnColor = "yellow";
+              $(this).css("background-color", playerTurnColor);
+            }else{
+              playerYellow.push([xIndex, yIndex]);
+              playerTurnColor = 'red';
+              $(this).css("background-color", playerTurnColor);
+            }
           }
 
             console.log("playerRed: "+ playerRed)
