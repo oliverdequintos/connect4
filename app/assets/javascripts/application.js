@@ -15,6 +15,7 @@
 //= require bootstrap
 //= require turbolinks
 //= require board-components
+//= require board-logic
 //= require_tree .
 
 var playerYellow = [];
