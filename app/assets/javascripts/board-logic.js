@@ -14,16 +14,16 @@ $(document).ready(function(){
 });
 
 function gameChecker(arr, vInput, hInput){
-  if (horizontalChecker(arr, hInput) >= 4 || verticalChecker(arr, vInput) >= 4 || diagonalChecker(arr, hInput, vInput) >= 4) {
+  if (horizontalChecker(arr, hInput) >= 4 || verticalChecker(arr, vInput) >= 4 || diagonalChecker(arr, hInput) >= 4) {
     alert("Player (1|2) win!");
   }
 }
 
-function horizontalChecker(arr, current_input){
+function horizontalChecker(arr, pointerIndex){
   var i;
   var arrX = [];
   for (i in arr) {
-    if (current_input == arr[i][1]) {
+    if (pointerIndex == arr[i][1]) {
       arrX.push(arr[i][0])
     }
   }
@@ -31,11 +31,11 @@ function horizontalChecker(arr, current_input){
   return sequenceCounter(arrX);
 }
 
-function verticalChecker(arr, current_input){
+function verticalChecker(arr, pointerIndex){
   var i;
   var arrX = [];
   for (i in arr) {
-    if (current_input == arr[i][0]) {
+    if (pointerIndex == arr[i][0]) {
       arrX.push(arr[i][1])
     }
   }
@@ -43,8 +43,8 @@ function verticalChecker(arr, current_input){
   return sequenceCounter(arrX);
 }
 
-function diagonalChecker(arr, hInput, vInput){
-  return 0;
+function diagonalChecker(arr, pointerIndex){
+  
 }
 
 function sequenceCounter(arrX) {
