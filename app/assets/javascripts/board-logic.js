@@ -13,95 +13,51 @@ $(document).ready(function(){
   }
 });
 
-function gameChecker(arr){
-  if (horizontalChecker(arr) == true || verticalChecker(arr) == true || diagonalChecker(arr) == true) {
+function gameChecker(arr, vInput, hInput){
+  if (horizontalChecker(arr, hInput) >= 4 || verticalChecker(arr, vInput) >= 4 || diagonalChecker(arr, hInput, vInput) >= 4) {
     alert("Player (1|2) win!");
   }
 }
 
-function horizontalChecker(arr){
-  var i, old_horizontal_val, old_aligned_val, old_direction;
-  var connected_cnt = 1;
+function horizontalChecker(arr, current_input){
+  var i;
+  var arrX = [];
   for (i in arr) {
-    if (old_horizontal_val == arr[i][1]){
-      if ((old_aligned_val - 1) == arr[i][0] ){
-        if (old_direction == "RIGHT"){
-          connected_cnt = 1;
-        }
-        connected_cnt++;
-        old_direction = "LEFT"
-      }else if ((old_aligned_val + 1) == arr[i][0] ){
-        if (old_direction == "LEFT"){
-          connected_cnt = 1;
-        }
-        connected_cnt++;
-        old_direction = "RIGHT"
-      }else{
-        connected_cnt = 1;
-      }
-    }else{
-      connected_cnt = 1;
+    if (current_input == arr[i][1]) {
+      arrX.push(arr[i][0])
     }
-    old_horizontal_val = arr[i][1]
-    old_aligned_val = arr[i][0]
   }
 
-  if (connected_cnt > 3) {
-    return true;
-  }
+  return sequenceCounter(arrX);
 }
 
-function verticalChecker(arr){
-  var i, old_vertical_val, old_aligned_val;
-  var connected_cnt = 1;
+function verticalChecker(arr, current_input){
+  var i;
+  var arrX = [];
   for (i in arr) {
-    if (old_vertical_val == arr[i][0]){
-      if ((old_aligned_val - 1) == arr[i][1] ){
-        connected_cnt++;
-      }else{
-        connected_cnt = 1;
-      }
-    }else{
-      connected_cnt = 1;
+    if (current_input == arr[i][0]) {
+      arrX.push(arr[i][1])
     }
-    old_vertical_val  = arr[i][0]
-    old_aligned_val   = arr[i][1]
   }
 
-  if (connected_cnt > 3) {
-    return true;
-  }
+  return sequenceCounter(arrX);
 }
 
-function diagonalChecker(arr){
-  var i, old_x_val, old_y_val, old_direction;
-  var connected_cnt = 1;
-  for (i in arr) {
-    if ((arr[i][1] + 1) == old_y_val){
-      if ((arr[i][0] - 1) == old_x_val){
-        if (old_direction == "RIGHT"){
-          connected_cnt = 1;
-        }
-        connected_cnt++;
-        old_direction = 'LEFT'
-      }else if ((arr[i][0] + 1) == old_x_val){
-        if (old_direction == "LEFT"){
-          connected_cnt = 1;
-        }
-        connected_cnt++;
-        old_direction = 'RIGHT'
-      }else {
-        connected_cnt = 1;
-      }
+function diagonalChecker(arr, hInput, vInput){
+  return 0;
+}
+
+function sequenceCounter(arrX) {
+  var sortedArrX = arrX.sort();
+  var current_val = 0, ctr = 1;
+  for (i in sortedArrX) {
+    if ((current_val + 1) == sortedArrX[i]){
+      ctr++;
     }else{
-      connected_cnt = 1;
+      ctr = 1;
     }
-
-    old_x_val = arr[i][0];
-    old_y_val = arr[i][1];
+    current_val = sortedArrX[i];
   }
 
-  if (connected_cnt > 3) {
-    return true;
-  }
+  return ctr;
 }

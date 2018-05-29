@@ -44,12 +44,12 @@ $(document).ready(function() {
           }else{
             if (playerTurnColor == 'red') {
               playerRed.push([xIndex, yIndex]);
-              gameChecker(playerRed);
+              gameChecker(playerRed, xIndex, yIndex);
               playerTurnColor = "yellow";
               $(this).css("background-color", playerTurnColor);
             }else{
               playerYellow.push([xIndex, yIndex]);
-              gameChecker(playerYellow);
+              gameChecker(playerYellow, xIndex, yIndex);
               playerTurnColor = 'red';
               $(this).css("background-color", playerTurnColor);
             }
